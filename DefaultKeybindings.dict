@@ -1,0 +1,90 @@
+{
+/* Compiled by Jacob Rus.  Modified by Gilberto Conde on 13 March 2010 and 
+ * 28 Nov 2019 for Emacs emulation Keybindings on MacOS
+ *
+ * This is a pretty good set, especially considering that many emacs bindings
+ * such as C-o, C-a, C-e, C-k, C-y, C-v, C-f, C-b, C-p, C-n, C-t, and
+ * perhaps a few more, are already built into the system.
+ *
+ * This file uses Esc for commands that use the Meta key, because if the
+ * option key was used, it would override existing Macintosh key bindings.
+ *
+ * I also found interesting stuff on the kill ring here:
+ * https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html
+ */
+
+    /* We are going to override the Esc binding for complete, so add Esc Esc */ 
+    "\U001B"    = {"\U001B" = "complete:";};        /* Esc Esc      Complete */
+
+/* My own shortcuts (plgx) */
+   "^Z"	  	= ("insertText:", "My Full Name");		/* C-z		My Full Name*/
+   "^z"		= ("insertText:", "Short Name");			/* C-z		ShortName*/
+   "^~z"	= ("insertText:", "My University");		/* C-M-z 	My University*/
+   "^~Z"	= ("insertText:", "my.email.address@gmail.com");		/* C-M-z 	my.email.address@gmail.com*/
+    
+/* Ctrl shortcuts */
+    /*    "^l"        = "centerSelectionInVisibleArea:";  * C-l
+    Recenter -- Already in MAC OS X 10.6.2 */
+    "^/"        = "undo:";                          /* C-/          Undo */
+/*    "^_"        = "undo:";                        /*  /* C-_          Undo */
+    "^ "        = "setMark:";                       /* C-Spc        Set mark */
+/*    "^\@"       = "setMark:";                     /*  /* C-@          Set mark */
+    "^w"        = "deleteToMark:";                  /* C-w          Delete to mark */
+
+/* Incremental search. */
+/* Uncomment these lines If Incremental Search IM is installed */
+/*  "^s"        = "ISIM_incrementalSearch:";        /* /* C-s          Incremental search */
+/*  "^r"        = "ISIM_reverseIncrementalSearch:"; /* /* C-r          Reverse incremental search */
+  "^g"        = "abort:";                         /* C-g          Abort */
+   "^y"        = "yankAndSelect:";                /* C-y          Is the yank and kill ring yank */
+
+
+/* Meta shortcuts (alt key in MacOS) */
+       "~f"     = "moveWordForward:";               /* Esc f        Move forward word */
+        "~b"     = "moveWordBackward:";              /* Esc b        Move backward word */
+        "~F"    = ( "setMark:",                     /* Esc @        Mark word */
+                    "moveWordForward:",
+                    "swapWithMark");
+        "~B"    = ( "setMark:",                     /* Esc @        Mark word */
+                    "moveWordBackward:",
+                    "swapWithMark");
+        "~v"     = "pageUp:";                        /* Esc v        Page Up */
+       "~/"     = "complete:";                      /* Esc /        Complete */
+        "~c"     = ( "capitalizeWord:",              /* Esc c
+    Capitalize -- copyright */
+                    "moveForward:",
+                    "moveForward:");
+        "~u"     = ( "uppercaseWord:",               /* Esc u
+    Uppercase -- Euro */
+                    "moveForward:",
+                    "moveForward:");
+        "~l"     = ( "lowercaseWord:",               /* Esc l        Lowercase */
+                    "moveForward:",
+                    "moveForward:");
+        "~t"     = "transposeWords:";                /* Esc t        Transpose words */
+       "~d"     = "deleteWordForward:";             /* Esc d        Delete word forward */
+        "~w"     = ( "deleteToMark:",               /* Esc w          copy to kill ring */
+                   "yank:");
+
+    "\U001B" = {
+       "~<"     = "moveToBeginningOfDocument:";     /* Esc <        Move to beginning of document */
+       "~>"     = "moveToEndOfDocument:";           /* Esc >        Move to end of document */
+/*        "^h"    = "deleteWordBackward:";            /* Esc C-h      Delete word backward */
+/*        "\U007F"= "deleteWordBackward:";            /* Esc Bksp     Delete word backward */
+       "h"     = ( "setMark:",                     /* Esc h        Mark paragraph */
+                    "moveToEndOfParagraph:",
+                    "swapWithMark");
+    };
+
+    /* C-x shortcuts */
+    "^x" = {
+        "u"     = "undo:";                          /* C-x u        Undo */
+        "k"     = "performClose:";                  /* C-x k        Close */
+        "^f"    = "openDocument:";                  /* C-x C-f      Open (find file) */
+        "^x"    = "swapWithMark:";                  /* C-x C-x      Swap with mark */
+        "^m"    = "selectToMark:";                  /* C-x C-m      Select to mark*/
+        "^s"    = "saveDocument:";                  /* C-x C-s      Save */
+        "^w"    = "saveDocumentAs:";                /* C-x C-w      Save as */
+    };
+
+}
