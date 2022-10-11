@@ -1,6 +1,7 @@
 {
-/* Compiled by Jacob Rus.  Modified by Gilberto Conde on 13 March 2010 and 
- * 28 Nov 2019 for Emacs emulation Keybindings on MacOS
+/* Original version Compiled by Jacob Rus.  Modified by Gilberto Conde on 
+ * 13 Mar 2010, 28 Nov 2019 and 10 Oct 2022 for Emacs keybinding emulation
+ *  on MacOS
  *
  * This is a pretty good set, especially considering that many emacs bindings
  * such as C-o, C-a, C-e, C-k, C-y, C-v, C-f, C-b, C-p, C-n, C-t, and
@@ -16,11 +17,19 @@
 /* We are going to override the Esc binding for complete, so add Esc Esc */ 
    "\U001B"    = {"\U001B" = "complete:";};                      /* Esc Esc      Complete */
 
-/* My own shortcuts (plgx) */
-   "^Z"	  	= ("insertText:", "My Full Name");		 /* C-z		My Full Name*/
-   "^z"		= ("insertText:", "Short Name");		 /* C-z		ShortName*/
-   "^~z"	= ("insertText:", "My University");		 /* C-M-z 	My University*/
-   "^~Z"	= ("insertText:", "my.email.address@gmail.com"); /* C-M-z 	my.email.address@gmail.com*/
+
+
+/* This first set are my own (plgx) shortcuts to insert text */
+/* C-c shortcuts */
+  "^c"     = {
+          "f"	= ("insertText:", "My Full Name");		 /* C-c f	My Full Name*/
+          "s"	= ("insertText:", "Short Name");		 /* C-c s	My ShortName*/
+          "uz"	= ("insertText:", "My University");		 /* C-c u 	My University*/
+          "d"	= ("insertText:", "Department");                 /* C-c d 	my Department*/
+          "h"	= ("insertText:", "my.email.address@gmail.com"); /* C-c h 	my personal mail*/
+          "w"	= ("insertText:", "my.email.address@uni.edu");   /* C-c w 	my work mail*/
+          "c"	= ("insertText:", "cel number");                 /* C-c c 	my cel ph number*/
+              }
     
 /* Ctrl shortcuts */
 /*    "^l"        = "centerSelectionInVisibleArea:";  * C-l   Recenter -- Already in MAC OS X 10.6.2 */
@@ -63,6 +72,7 @@
   "~w"     = ( "deleteToMark:",                                   /* Esc w        copy to kill ring */
                "yank:");
 
+/* Using the ESC key followed by.. */
   "\U001B" = {
           "~<"     = "moveToBeginningOfDocument:";                /* Esc <        Move to beginning of document */
           "~>"     = "moveToEndOfDocument:";                      /* Esc >        Move to end of document */
