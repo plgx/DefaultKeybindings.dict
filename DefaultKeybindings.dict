@@ -7,9 +7,6 @@
  * such as C-o, C-a, C-e, C-k, C-y, C-v, C-f, C-b, C-p, C-n, C-t, and
  * perhaps a few more, are already built into the system.
  *
- * This file uses Esc for commands that use the Meta key, because if the
- * option key was used, it would override existing Macintosh key bindings.
- *
  * I also found interesting stuff on the kill ring here:
  * https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html
  */
