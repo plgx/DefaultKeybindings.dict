@@ -19,13 +19,13 @@
 /* This first set are my own (plgx) shortcuts to insert text */
 /* C-c shortcuts */
   "^c"     = {
-          "f"	= ("insertText:", "Gilberto Conde Zambada");	   	        /* C-c f	My Full Name*/
-          "s"	= ("insertText:", "Gilberto Conde");		                /* C-c s	My ShortName*/
-          "u"	= ("insertText:", "El Colegio de México");		        /* C-c u 	My University*/
-          "d"	= ("insertText:", "Centro de Estudios de Asia y África");       /* C-c d 	my Department*/
-          "h"	= ("insertText:", "ah.gilberto.c@gmail.com");                   /* C-c h 	my personal mail*/
-          "w"	= ("insertText:", "gilberto.conde@colmex.mx");                  /* C-c w 	my work mail*/
-          "c"	= ("insertText:", "+52 55 6617 3948");                           /* C-c c 	my cel ph number*/
+          "f"	= ("insertText:", "My Full Name");	   	                /* C-c f	My Full Name*/
+          "s"	= ("insertText:", "Short Name");		                /* C-c s	My ShortName*/
+          "u"	= ("insertText:", "My University Full Name");		        /* C-c u 	My University*/
+          "d"	= ("insertText:", "My Department Full Name");                   /* C-c d 	my Department*/
+          "h"	= ("insertText:", "my.personal.mail@gmail.com");                /* C-c h 	my personal mail*/
+          "w"	= ("insertText:", "my.institutional.mail@colmex.mx");           /* C-c w 	my work mail*/
+          "c"	= ("insertText:", "+52 xx xxxx xxxx");                          /* C-c c 	my cel ph number*/
               };
     
 /* Ctrl shortcuts */
