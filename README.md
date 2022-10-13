@@ -8,9 +8,11 @@ When I got a new Mac in 2019 (still Intel base), I had a lot of trubble installi
 I might have had to create the new KeyBindings folder inside my home ~/Library/ directory, but, let me insist, that was the easy part.
 
 # More tweaks
-I took advantage of the operation to add the ability to yank different segments of text (up to four) from the kill ring by hitting C-y repeatedly. 
+I took advantage of the operation to add the ability to yank different segments of text (up to four) from the kill ring by hitting C-y repeatedly. I set this in the Terminal with `defaults write -g NSTextKillRingSize -int 4` though it could be 8 or a different number.
+
+According to Apple's "Cocoa Event Handling Guide", "If you set this to a value larger than one, you also need to rebind Control-Y to `yankAndSelect:` instead of `yank:` for things to work properly".
 
 # Not perfect, but couldn't live without it
-Not everything works as hoped for, but it does to a large extent. I like it so much that I've been tempted to move from Firefox to Safari only to be able to use my Emacs-like keybindings.
+Not everything works as hoped for, but it does to a large extent. I like it so much that I've been tempted to move from Firefox to Safari only to be able to use my Emacs-like keybindings. 
 
-There's a lot of hype about Karabiner Elements now. Maybe I should give it a try.
+There's a lot of hype about Karabiner Elements now. I should give it a try.
