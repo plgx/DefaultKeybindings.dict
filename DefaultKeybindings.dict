@@ -26,8 +26,8 @@
           "N"	= ("insertText:", "My Full Name");		 /* C-c f	My Full Name*/
           "u"	= ("insertText:", "My University");		 /* C-c u 	My University*/
           "d"	= ("insertText:", "Department");                 /* C-c d 	my Department*/
-          "m"	= ("insertText:", "my.personal.email.address@mailsp.com"); /* C-c h 	my personal mail*/
-          "M"	= ("insertText:", "my.email.address@uni.edu");   /* C-c w 	my work mail*/
+          "m"	= ("insertText:", "my.personal.email.addressATmailsp.com"); /* C-c h 	my personal mail*/
+          "M"	= ("insertText:", "my.email.addressATuni.edu");   /* C-c w 	my work mail*/
           "c"	= ("insertText:", "cel number");                 /* C-c c 	my cel ph number with no dashes or spaces*/
           "C"	= ("insertText:", "full cel number");                 /* C-c c 	my cel ph number with country prefix and dashes or spaces*/
               };
