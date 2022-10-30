@@ -1,0 +1,117 @@
+{
+/* Original version Compiled by Jacob Rus.  Modified by Gilberto Conde on 
+ * 13 Mar 2010, 28 Nov 2019 and 10 Oct 2022 for Emacs keybinding emulation
+ *  on MacOS
+ *
+ * This is a pretty good set, especially considering that many emacs bindings
+ * such as C-o, C-a, C-e, C-k, C-y, C-v, C-f, C-b, C-p, C-n, C-t, and
+ * perhaps a few more, are already built into the system.
+ *
+ * This file uses Esc for commands that use the Meta key, because if the
+ * option key was used, it would override existing Macintosh key bindings.
+ *
+ * I also found interesting stuff on the kill ring here:
+ * https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html
+ */
+
+/* We are going to override the Esc binding for complete, so add Esc Esc */ 
+   "\U001B"    = {"\U001B" = "complete:";};                      /* Esc Esc      Complete */
+
+
+
+/* This first set are my own (plgx) shortcuts to insert text */
+/* C-c shortcuts */
+  "^c"     = {
+          "n"	= ("insertText:", "Short Name");		 /* C-c s	My ShortName*/
+          "N"	= ("insertText:", "My Full Name");		 /* C-c f	My Full Name*/
+          "u"	= ("insertText:", "My University");		 /* C-c u 	My University*/
+          "d"	= ("insertText:", "Department");                 /* C-c d 	my Department*/
+          "m"	= ("insertText:", "my.personal.email.addressATmailsp.com"); /* C-c h 	my personal mail*/
+          "M"	= ("insertText:", "my.email.addressATuni.edu");   /* C-c w 	my work mail*/
+          "c"	= ("insertText:", "cel number");                 /* C-c c 	my cel ph number with no dashes or spaces*/
+          "C"	= ("insertText:", "full cel number");                 /* C-c c 	my cel ph number with country prefix and dashes or spaces*/
+              };
+    
+/* insert pairs with C-c followed by Option down */
+     "~f"       = ("insertText:", "‹›", "moveBackward:");
+     "~F"       = ("insertText:", "«»", "moveBackward:");
+     "~k"       = ("insertText:", "[]", "moveBackward:");
+     "~K"       = ("insertText:", "{}", "moveBackward:");
+     "~p"       = ("insertText:", "()", "moveBackward:");
+     "~P"       = ("insertText:", "¿?", "moveBackward:");
+     "~c"       = ("insertText:", "‘’", "moveBackward:");
+     "~C"       = ("insertText:", "“”", "moveBackward:");
+     "~-"       = ("insertText:", "「」", "moveBackward:");
+     "~_"       = ("insertText:", "『』", "moveBackward:");
+     "~*"       = ("insertText:", "°");                                        /* Not a pair, but I wanted it thus bound */
+/* insert text with C-c followed by Control down */
+     "^r"	= ("insertText:", "someImportantThing1");                            /* RFC*/
+     "^R"	= ("insertText:", "someImportantThing2");                            /* RFC*/
+     "^c"	= ("insertText:", "someImportantThing3");                       /* CURP*/
+     "^C"	= ("insertText:", "someImportantThing4");                       /* CURP*/
+       		       };
+
+/* Ctrl shortcuts */
+/*    "^l"        = "centerSelectionInVisibleArea:";  * C-l   Recenter -- Already in MAC OS X 10.6.2 */
+    "^/"        = "undo:";                                       /* C-/          Undo */
+/*    "^_"        = "undo:";                                     /* C-_          Undo */
+    "^ "        = "setMark:";                                    /* C-Spc        Set mark */
+/*    "^\@"       = "setMark:";                                  /* C-@          Set mabrk */
+    "^w"        = "deleteToMark:";                               /* C-w          Delete to mark */
+
+/* Incremental search. */
+/* Uncomment these lines If Incremental Search IM is installed */
+/*  "^s"        = "ISIM_incrementalSearch:";                     /* C-s          Incremental search */
+/*  "^r"        = "ISIM_reverseIncrementalSearch:";              /* C-r          Reverse incremental search */
+  "^g"        = "abort:";                                        /* C-g          Abort */
+  "^y"        = "yankAndSelect:";                                /* C-y          Is the yank and kill ring yank */
+
+
+/* Meta shortcuts (alt key in MacOS) */
+  "~f"     = "moveWordForward:";                                 /* Esc f        Move forward word */
+  "~b"     = "moveWordBackward:";                                /* Esc b        Move backward word */
+  "~F"     = ( "setMark:",                                       /* Esc @        Mark word */
+              "moveWordForward:",
+              "swapWithMark");
+  "~B"     = ( "setMark:",                                        /* Esc @        Mark word */
+              "moveWordBackward:",
+              "swapWithMark");
+  "~v"     = "pageUp:";                                           /* Esc v        Page Up */
+  "~/"     = "complete:";                                         /* Esc /        Complete */
+  "~c"     = ( "capitalizeWord:",                                 /* Esc c        Capitalize -- copyright */
+               "moveForward:",
+               "moveForward:");
+  "~u"     = ( "uppercaseWord:",                                  /* Esc u        Uppercase -- Euro */
+               "moveForward:",
+               "moveForward:");
+  "~l"     = ( "lowercaseWord:",                                  /* Esc l        Lowercase */
+               "moveForward:",
+               "moveForward:");
+  "~t"     = "transposeWords:";                                   /* Esc t        Transpose words */
+  "~d"     = "deleteWordForward:";                                /* Esc d        Delete word forward */
+  "~w"     = ( "deleteToMark:",                                   /* Esc w        copy to kill ring */
+               "yank:");
+
+/* Using the ESC key followed by.. */
+  "\U001B" = {
+          "~<"     = "moveToBeginningOfDocument:";                /* Esc <        Move to beginning of document */
+          "~>"     = "moveToEndOfDocument:";                      /* Esc >        Move to end of document */
+/*        "^h"     = "deleteWordBackward:";                       /* /* Esc C-h      Delete word backward */
+/*        "\U007F" = "deleteWordBackward:";                       /* /* Esc Bksp     Delete word backward */
+          "h"      = ( "setMark:",                                /* Esc h        Mark paragraph */
+                       "moveToEndOfParagraph:",
+                       "swapWithMark");
+             };
+
+/* C-x shortcuts */
+  "^x"     = {
+          "u"     = "undo:";                                       /* C-x u        Undo */
+          "k"     = "performClose:";                               /* C-x k        Close */
+          "^f"    = "openDocument:";                               /* C-x C-f      Open (find file) */
+          "^x"    = "swapWithMark:";                               /* C-x C-x      Swap with mark */
+          "^m"    = "selectToMark:";                               /* C-x C-m      Select to mark*/
+          "^s"    = "saveDocument:";                               /* C-x C-s      Save */
+          "^w"    = "saveDocumentAs:";                             /* C-x C-w      Save as */
+              };
+
+}
